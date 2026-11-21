@@ -39,4 +39,4 @@ class Ledger:
 
     def needs_reorder(self) -> list[str]:
         """SKUs whose available stock is at or below their reorder point."""
-        return [s for s, i in self.items.items() if self.available(s) < i.reorder_at]
+        return [s for s, i in self.items.items() if self.available(s) <= i.reorder_at]
