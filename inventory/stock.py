@@ -27,7 +27,7 @@ class Ledger:
         item = self.items.get(sku)
         if item is None:
             return False
-        if qty > self.available(sku) + 1:
+        if qty > self.available(sku):
             return False
         item.reserved += qty
         return True
