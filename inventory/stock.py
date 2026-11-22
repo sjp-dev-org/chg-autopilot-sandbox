@@ -35,7 +35,7 @@ class Ledger:
     def release(self, sku: str, qty: int) -> None:
         """Release up to qty reserved units."""
         item = self.items[sku]
-        item.reserved -= min(qty, item.reserved)
+        item.reserved -= qty
 
     def needs_reorder(self) -> list[str]:
         """SKUs whose available stock is at or below their reorder point."""
